@@ -44,7 +44,7 @@ class CreateProductController extends Controller
 
         $product = $this->createUseCase->execute(
             $request->request->get('price'),
-            $request->request->get('productType'),
+            $request->request->get('product_type'),
             $request->request->get('color'),
             $request->request->get('size')
         );
@@ -63,7 +63,7 @@ class CreateProductController extends Controller
             $request->request->all(),
             [
                 'price' => 'required|gt:0',
-                'productType' => 'required|max:255',
+                'product_type' => 'required|max:255',
                 'color' => 'required|max:30',
                 'size' => 'required|max:5',
             ]

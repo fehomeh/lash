@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::post('/product', 'Api\CreateProductController');
+Route::post('/order', 'Api\CreateOrderDraftController');
+Route::get('/orders', 'Api\ListOrderController@listAllAction');
+Route::get('/orders/{productType}', 'Api\ListOrderController@listByProductTypeAction');
